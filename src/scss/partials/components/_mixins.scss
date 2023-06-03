@@ -1,0 +1,31 @@
+@use '../components/variables' as v;
+//Mixin de flexbox
+@mixin flex($dis, $a-items, $j-items) { 
+    display: $dis ;
+    align-items: $a-items;
+    justify-content: $j-items;
+}
+
+@mixin grid($grid, $noCol, $sizeCol) {
+    display: $grid;
+    grid-template-columns: repeat($noCol, $sizeCol);
+}
+
+//Medidas responsivas
+@mixin mobile() {
+    @media (min-width: v.$mobile) {
+        @content;
+    }
+}
+
+@mixin tablet() {
+    @media (min-width: v.$tablet){
+        @content;
+    }
+}
+
+@mixin desktop(){
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}

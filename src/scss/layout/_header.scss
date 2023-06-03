@@ -1,0 +1,12 @@
+@use '../partials/components/variables' as v;
+.header {
+    padding: 1.5rem 0;
+    background-color: v.$rosa-principal ;
+    color: v.$text-color;
+    text-align: center;
+    font: {
+      family: 'Arial';
+      size: 1.5rem;
+    }
+  }
+  

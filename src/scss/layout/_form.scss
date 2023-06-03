@@ -1,0 +1,81 @@
+@use '../partials/components/mixins' as m;
+@use '../partials/components/variables' as v;
+.main {
+    @include m.tablet {
+        @include m.tablet {
+            @include m.grid(grid, 2, 1fr);
+        }
+    }
+    align-items: center;
+    max-width: 120rem;
+    margin-top: 1rem;
+}
+
+//Formlario
+
+.form {
+    background-color: v.$rosa-principal;
+    legend {
+        color: v.$text-color;
+        text-align: center;
+        font: {
+            family:'Arial';
+            size: 1.5rem;
+            weight: bolder;
+        }
+    }
+
+    .form-input {
+        @include m.flex(flex, start, start);
+        flex-direction: column;
+        padding: 1rem;
+        
+        label {
+            color: v.$text-color;
+            font: {
+                family: 'Arial';
+            }
+            margin: .2rem 0 0 ;
+        }
+
+        input {
+            width:80vw;
+            @include m.tablet {
+                width: 45vw;
+            }
+            padding: .5rem;
+            background-color: white;
+            border: none;
+        }
+
+        .enviar {
+            width: 8rem;
+            margin-top: 1rem;
+            background-color: white;
+            border: none;
+            align-self: center;
+        }
+
+    
+    }
+}
+
+.formulario-img {
+
+    img {
+        margin: auto;
+        width: 20rem;
+        border: solid v.$rosa-principal .5rem;
+    }
+
+    h2 {
+        color: v.$rosa-principal;
+        margin-top: 1rem;
+        text-align: center;
+        font: {
+            family:'Arial';
+            size: 2.4rem;
+        }
+    }
+}
+

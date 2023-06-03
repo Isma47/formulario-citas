@@ -1,0 +1,13 @@
+@use './../partials/components/variables' as v;
+
+.alerta-parrafo{
+    font: {
+        family: 'Arial';
+        size: .7rem;
+    }
+    margin: .5rem 0;
+    padding: .3rem 0;
+    background-color: v.$alertas;
+    text-align: center;
+    color: v.$text-color;
+}
