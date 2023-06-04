@@ -3,9 +3,11 @@ const body = document.querySelector("body");
 
 //--Variable de alertas dom
 const alerta = document.createElement("DIV");
+//Alerta que no se ingreso algo en el formulario
+const alertaMensaje = document.querySelector('.alerta-mensaje')
 
 const formulario = document.querySelector("#formulario");
-const inputs = document.querySelectorAll("#formulario input");
+const inputs = document.querySelectorAll('#formulario input[type="text"]', 'input[type="email"]', 'input[type="email"]', 'input[type="date"]');
 
 //Objeto del formulario
 const objFormulario = {};
@@ -18,16 +20,19 @@ function validarFormulario() {
 
         enviarFormulario();
     });
+
 }
 
 //funciones
 
+
 //Enviar formulario
 function enviarFormulario() {
+  
     inputs.forEach((input) => {
+        
         if (input.value === "") {
-            //Alerta que no se ingreso algo en el formulario
-            const alertaMensaje = document.querySelector('.alerta-mensaje')
+          
             const textAlerta = document.createElement('P');
             textAlerta.textContent = `Debes llenar el apartado de ${input.name}`;
 
@@ -35,32 +40,36 @@ function enviarFormulario() {
             alertaMensaje.appendChild(textAlerta);
             //Agregamos clases a parrafos y al div alerta
             textAlerta.classList.add("alerta-parrafo");
-
+    
             setTimeout(() => {
                 textAlerta.remove();
             }, 3000);
+            return;
         }
-        //Agregar al objeto
     });
     agregarInfoObjeto();
+
 }
 
 
 ///Hacer que salte el mensaje con el resultado
 function agregarInfoObjeto() {
+ 
+    inputs.forEach((input) => {
 
-    formulario.addEventListener('submit', ()=>{
-        inputs.forEach((input) => {
-            objFormulario[input.name] = input.value;
-            if (!input.value === ""){
-                console.log('sada')
-            }
-        });
-    })
-
-    const objetoValorJSON = JSON.stringify(objFormulario);
-    localStorage.setItem("valores", objetoValorJSON);
+    });
 
 }
 
-//Mensaje con los datos de citas que sale al enviar el formulario
+/*//Limpiar html
+function limpiarHtml() {
+    let textoAlerta = alertaMensaje.firstElementChild;
+
+    while(textoAlerta) {
+        alertaMensaje.removeChild(textoAlerta);
+        textoAlerta = alertaMensaje.firstElementChild;
+    }
+}*/
+
+
+
